@@ -8,9 +8,32 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
 />
-<script defer src=".assets.javascript.script.js"></script>
 </head>
 <body>
-    
+  <body>
+    <main class="container">
+      <section>
+        <nav>
+          <ul>
+            <li><a href="./blog.html">Blog</a></li>
+          </ul>
+          <ul>
+            <li><a href="#" id="mode" role="button" tabindex="0">Toggle theme</a></li>
+          </ul>
+        </nav>
+      </section>
+      <article>
+        <form>
+          <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" />
+          </div>
+          <button id="submit" type="submit">Submit</button>
+        </form>
+      </article>
+    </main>
+    <script src="./assets/javascript/script.js"></script>
+  </body>
+</html>
 </body>
 </html>
