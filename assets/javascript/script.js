@@ -8,6 +8,7 @@ const setTheme = function() {
     htmlEl.dataset.theme = localStorage.getItem('theme');
   }
 
+
 /*This function below provides obtaining data (posts as a string) from local Storage, 
 the turning those data from string to object,
 then after new value from users input has been gotten turns those data to string
@@ -79,6 +80,8 @@ const handleSubmit = function(event) {
     location.assign('./blog.html');
   }, 250);
 };
+
+
 
 if (submitBtn) submitBtn.addEventListener('click', handleSubmit);/*Event listiner that starts the "handleSubmit" function after 
 event "click" happens with  hmtl element that signed by the querySelector "submit"*/
