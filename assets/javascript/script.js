@@ -2,6 +2,11 @@ const submitBtn = document.querySelector('#submit');//const with querySelector t
 const titleInput = document.querySelector('#title');//const with querySelector that grabs the value of users input
 const postsEl = document.querySelector('#posts');/*const with querySelector that provides renewal of content 
 in appropriate section of blog.html without changing the file itself*/
+const modeBtn = document.querySelector('#mode');
+const htmlEl = document.querySelector('html');
+const setTheme = function() {
+    htmlEl.dataset.theme = localStorage.getItem('theme');
+  }
 
 /*This function below provides obtaining data (posts as a string) from local Storage, 
 the turning those data from string to object,
@@ -28,6 +33,18 @@ const renderPosts = function() {
       postsEl.appendChild(blogPostEl);
     }
   }
+/*The function below provides changing the lightness of the whole document 
+!This chunk of code was borrowed from Anthony Cooper(Instructor)*/
+  const toggleTheme = function() {
+    if (htmlEl.dataset.theme === 'dark') {
+      htmlEl.dataset.theme = 'light';
+    } else {
+      htmlEl.dataset.theme = 'dark';
+    }
+    localStorage.setItem('theme', htmlEl.dataset.theme);
+  }
+  
+
 
 /*This function below provides obtaining data from local Storage, the turning those data from string to object,
 then after new value from users input has been gotten turns those data to string and sends in to the local starage.
@@ -66,4 +83,5 @@ const handleSubmit = function(event) {
 if (submitBtn) submitBtn.addEventListener('click', handleSubmit);/*Event listiner that starts the "handleSubmit" function after 
 event "click" happens with  hmtl element that signed by the querySelector "submit"*/
 if (postsEl) renderPosts();/*function "renderPosts" launched*/
-
+if (modeBtn) modeBtn.addEventListener('click', toggleTheme);/* function "toggleTheme" launched**/
+setTheme();/*function setTheme launched */
